@@ -1,0 +1,12 @@
+#Notes on Workshop
+a) What are the similarities between individual diagrams? What turned out the same?
+
+Similarities:  We all have a customer/clients, dogs, payments and walks for key attributes.
+They all turned out to be very similar as for the important things to know for the business. The connections, they are all connected to the client or dog. 
+
+b) Where did each of your diagrams differ? What explanation do you have for those
+differences? What might be the pros and cons of each approach?
+
+The additional attributes like the walkers table from lorah. Smayas graph was more detailed in giving key point and foreign points being labeled.
+From sonia, the many to many relatoinships were pointed out within the connections. Some pros and cons, for pros its easy to understand and easy to impliment and analyze data.
+The cons are less flexible for future changes. 
