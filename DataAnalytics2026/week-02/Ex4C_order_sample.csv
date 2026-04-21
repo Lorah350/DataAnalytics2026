@@ -1,0 +1,12 @@
+SELECT * 
+FROM northwind.employees;
+SELECT *
+FROM northwind.products;
+SELECT *
+FROM northwind.products 
+LIMIT 10;
+SELECT *
+FROM northwind.categories;
+SELECT OrderID, OrderDate, ShipName, ShipCountry
+FROM northwind.orders
+LIMIT 50; 
