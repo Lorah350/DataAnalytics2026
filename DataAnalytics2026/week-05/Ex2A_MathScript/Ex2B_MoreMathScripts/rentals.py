@@ -7,9 +7,10 @@ import math
 
 # Ask how many people are going on the tour
 people = int(input("Enter the number of people going on the tour: "))
-#                                                                     * tested code using 8 people
-#                                                                     *result - cost per person: $31.25
-#                                                                     *vans needed : 1  
+#                                                                     * tested code using 38 people
+#                                                                     *result - cost per person: $19.74
+#                                                                     *Total rent cost: $750.00
+#                                                                     * Vans needed :3 
 # Vans seat 15 passengers each
 seats_per_van = 15
 
