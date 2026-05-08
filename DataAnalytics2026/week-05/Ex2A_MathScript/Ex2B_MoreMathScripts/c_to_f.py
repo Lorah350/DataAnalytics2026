@@ -6,6 +6,8 @@
 #(Celcius number is multiplied by 9 divided 5 plus 32)
 #Fareinheit starts 32 degrees higher
 
+#Formula = C * 9/5 +32
+
 # # Temperature conversion from Celsius to Fahrenheit using  (22°C)
 
 # Use 22 as the Celsius temperature
