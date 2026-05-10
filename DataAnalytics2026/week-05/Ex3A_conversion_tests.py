@@ -1,8 +1,8 @@
-# Description: This script tests various numeric
-# conversion techniques
-# Author: Sam Q. Newprogrammer
+#Description : This script tests various numeric
+#             conversion techniques
+# Author : Sam Q. Newprogrammer
 
-# Step 2: Define the variables
+#Step 2 : Define the variables
 a = " 101.1 "
 b = '55'
 c = "402 Stevens"
@@ -41,3 +41,16 @@ print("int_float_a:", int_float_a, type(int_float_a))
 # c) int(float(a)) works because float(a) becomes 101.1, then int() removes decimals
 # d) int(c) and float(c) fail because "402 Stevens" contains letters
 # e) int(d) and float(d) fail because "Number 5 " contains letters
+
+# Part (d): Slicing numeric portions
+num_a = float(a[1:6])   # "101.1" → 101.1
+num_c = int(c[0:3])     # "402" → 402
+num_d = int(d[7])       # "5" → 5
+
+print("num_a:", num_a, type(num_a))
+print("num_c:", num_c, type(num_c))
+print("num_d:", num_d, type(num_d))
+
+# Part (e): Using .strip() to remove spaces
+print("a stripped:", a.strip())
+print("d stripped:", d.strip())
