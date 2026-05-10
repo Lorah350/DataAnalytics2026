@@ -1,0 +1,66 @@
+# Ex4D_Bonus_number_guesser.py
+# This script creates a simple number guessing game WITHOUT using the random module.
+# Instead, we build our own list of numbers and shuffle it using Python tools
+# we've already learned (like lists and sets).
+# The user keeps guessing until they find the correct number.
+
+# -----------------------------------------
+# 1. Build a pool of numbers
+# -----------------------------------------
+# We'll use a list for the pool of possible numbers.
+number_pool = list(range(1, 21))  # Numbers 1 through 20
+
+# To "randomize" without using the random module, we can:
+# - Convert the list to a set (which removes order)
+# - Convert it back to a list (order becomes unpredictable)
+shuffled_pool = list(set(number_pool))
+
+# The "random" number will be the first item in this shuffled list.
+secret_number = shuffled_pool[0]
+
+# -----------------------------------------
+# 2. Explain the game to the user
+# -----------------------------------------
+print("Welcome to the Number Guessing Game!")
+print("I'm thinking of a number between 1 and 20.")
+print("Try to guess it!")
+
+# -----------------------------------------
+# 3. Tracking guesses (BONUS features)
+# -----------------------------------------
+guess_count = 0
+guessed_numbers = []  # Store all guesses
+
+# -----------------------------------------
+# 4. Main guessing loop
+# -----------------------------------------
+while True:
+    user_input = input("Enter your guess: ")
+
+    # Make the program safe for non-numeric input
+    if not user_input.isdigit():
+        print("Please enter a valid number.")
+        continue
+
+    guess = int(user_input)
+    guess_count += 1
+    guessed_numbers.append(guess)
+
+    # Compare guess to the secret number
+    if guess < secret_number:
+        print("Higher...")
+    elif guess > secret_number:
+        print("Lower...")
+    else:
+        print(f"Correct! The number was {secret_number}.")
+        break
+
+# -----------------------------------------
+# 5. End-of-game summary (BONUS)
+# -----------------------------------------
+print("\nGame Summary:")
+print(f"You made {guess_count} guesses.")
+print(f"Your guesses were: {guessed_numbers}")
+
+if guess_count < 5:
+    print("You're awesome! Great intuition!")
