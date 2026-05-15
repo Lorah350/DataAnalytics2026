@@ -1,0 +1,71 @@
+# This class represents a restaurant and the type of food it serves.
+class Restaurant:
+    """A simple class to store a restaurant's name and the type of food it serves."""
+
+    def __init__(self, rest_name, food_type):
+        self.rest_name = rest_name
+        self.food_type = food_type
+        self.number_served = 0
+        self.customer_ratings = []
+
+    def describe_rest(self):
+        print(f"{self.rest_name} serves {self.food_type}.")
+
+    def rest_open(self):
+        print(f"{self.rest_name} is open.")
+
+
+# Creating restaurant objects
+rest1 = Restaurant("Mama's Kitchen", "Soul Food")
+rest2 = Restaurant("Sakura House", "Japanese Cuisine")
+rest3 = Restaurant("Bella Pasta", "Italian Food")
+
+rest1.describe_rest()
+rest2.describe_rest()
+rest3.describe_rest()
+
+
+# ---------------- FOOD TRUCK CHILD CLASS ---------------- #
+
+class FoodTruck(Restaurant):
+    """A child class that represents a food truck with extra features."""
+
+    def __init__(self, rest_name, food_type):
+        super().__init__(rest_name, food_type)
+        self.private_bookings = "N"
+        self.truck_location = ""
+        self.location_history = []   # CHALLENGE FEATURE
+
+    def accepts_private_bookings(self):
+        answer = input("Does this food truck accept private bookings? Y/N ").upper()
+
+        if answer == "Y":
+            self.private_bookings = "Y"
+            print("This food truck currently accepts private bookings.")
+        else:
+            self.private_bookings = "N"
+            print("This food truck does not accept private bookings.")
+
+    def relocate_truck(self):
+        location = input("Enter the truck's current location (street address and city): ")
+        self.truck_location = location
+        print(f"Truck is currently located at {location}")
+
+        # CHALLENGE: Add location to history
+        # I chose to allow duplicates because the truck may return to the same spot on different days.
+        self.location_history.append(location)
+
+    def show_location_history(self):
+        print("Location History:")
+        for loc in self.location_history:
+            print(f"- {loc}")
+
+
+# Testing the FoodTruck class
+truck1 = FoodTruck("Street Bites", "Tacos")
+
+truck1.describe_rest()
+truck1.accepts_private_bookings()
+truck1.relocate_truck()
+truck1.relocate_truck()  # test again
+truck1.show_location_history()
